@@ -1,0 +1,223 @@
+{
+  "timezone": "Asia/Shanghai",
+  "rules": [
+    {
+      "id": "r1",
+      "child": "大宝",
+      "title": "数学补课",
+      "type": "weekly",
+      "days": [
+        0,
+        2
+      ],
+      "time": "19:00",
+      "duration": 90,
+      "leads": [
+        30,
+        120
+      ],
+      "start": "2026-11-23",
+      "until": "2027-05-22",
+      "location": "新东方 3 楼 302",
+      "note": "带错题本和卷子",
+      "totalLessons": 24,
+      "lessonsPerSession": 1,
+      "feePerLesson": 200,
+      "usedLessons": ""
+    },
+    {
+      "id": "r2",
+      "child": "大宝",
+      "title": "英语补课",
+      "type": "weekly",
+      "days": [
+        4
+      ],
+      "time": "19:00",
+      "duration": 90,
+      "leads": [
+        30
+      ],
+      "start": "2026-11-23",
+      "until": "2027-05-22",
+      "location": "线上（腾讯会议）",
+      "note": "课前 10 分钟开设备",
+      "totalLessons": 20,
+      "lessonsPerSession": 1,
+      "feePerLesson": 180,
+      "usedLessons": ""
+    },
+    {
+      "id": "r3",
+      "child": "二宝",
+      "title": "语文补课",
+      "type": "weekly",
+      "days": [
+        1,
+        3
+      ],
+      "time": "18:30",
+      "duration": 90,
+      "leads": [
+        30
+      ],
+      "start": "2026-11-23",
+      "until": "2027-05-22",
+      "location": "小区对面学而思",
+      "note": "",
+      "totalLessons": 24,
+      "lessonsPerSession": 1,
+      "feePerLesson": 160,
+      "usedLessons": ""
+    },
+    {
+      "id": "r4",
+      "child": "大宝",
+      "title": "物理补课",
+      "type": "weekly",
+      "days": [
+        5
+      ],
+      "time": "09:00",
+      "duration": 120,
+      "leads": [
+        60
+      ],
+      "start": "2026-11-23",
+      "until": "2027-05-22",
+      "location": "少年宫 B 座",
+      "note": "要提前出门",
+      "totalLessons": 16,
+      "lessonsPerSession": 2,
+      "feePerLesson": 250,
+      "usedLessons": ""
+    },
+    {
+      "id": "r5",
+      "child": "二宝",
+      "title": "舞蹈兴趣课",
+      "type": "weekly",
+      "days": [
+        5
+      ],
+      "time": "14:00",
+      "duration": 90,
+      "leads": [
+        60
+      ],
+      "start": "2026-11-23",
+      "until": "2027-05-22",
+      "location": "青少年活动中心",
+      "note": "换舞蹈服、带水杯",
+      "totalLessons": 32,
+      "lessonsPerSession": 1,
+      "feePerLesson": 120,
+      "usedLessons": ""
+    },
+    {
+      "id": "r6",
+      "child": "大宝",
+      "title": "篮球兴趣课",
+      "type": "weekly",
+      "days": [
+        6
+      ],
+      "time": "10:00",
+      "duration": 90,
+      "leads": [
+        45
+      ],
+      "start": "2026-11-23",
+      "until": "2027-05-22",
+      "location": "体育馆 2 号场",
+      "note": "",
+      "totalLessons": 20,
+      "lessonsPerSession": 1,
+      "feePerLesson": 150,
+      "usedLessons": ""
+    },
+    {
+      "id": "r7",
+      "child": "二宝",
+      "title": "钢琴兴趣课",
+      "type": "weekly",
+      "days": [
+        6
+      ],
+      "time": "16:00",
+      "duration": 60,
+      "leads": [
+        30
+      ],
+      "start": "2026-11-23",
+      "until": "2027-05-22",
+      "location": "琴行 205",
+      "note": "带琴谱",
+      "totalLessons": 16,
+      "lessonsPerSession": 1,
+      "feePerLesson": 300,
+      "usedLessons": ""
+    },
+    {
+      "id": "r8",
+      "child": "全家",
+      "title": "学校家长会",
+      "type": "once",
+      "date": "2026-12-04",
+      "time": "14:00",
+      "duration": 120,
+      "leads": [
+        60,
+        1440
+      ],
+      "location": "学校报告厅",
+      "note": "提前安排接送",
+      "totalLessons": 0,
+      "lessonsPerSession": 1,
+      "feePerLesson": 0,
+      "usedLessons": ""
+    },
+    {
+      "id": "r9",
+      "child": "大宝",
+      "title": "生日（农历八月十五）",
+      "type": "lunar",
+      "lunarMonth": 8,
+      "lunarDay": 15,
+      "leapPolicy": "normal",
+      "time": "09:00",
+      "duration": 60,
+      "leads": [
+        30,
+        4320
+      ],
+      "location": "",
+      "note": "农历生日，提前 3 天订蛋糕",
+      "totalLessons": 0,
+      "lessonsPerSession": 1,
+      "feePerLesson": 0,
+      "usedLessons": ""
+    },
+    {
+      "id": "r10",
+      "child": "二宝",
+      "title": "生日（农历腊月廿三）",
+      "type": "lunar",
+      "lunarMonth": 12,
+      "lunarDay": 23,
+      "leapPolicy": "normal",
+      "time": "09:00",
+      "duration": 60,
+      "leads": [
+        30,
+        4320
+      ],
+      "location": "",
+      "note": "农历生日，小年",
+      "totalLessons": 0,
+      "lessonsPerSession": 1,
+      "feePerLesson": 0,
+      "usedLessons": ""
+    }
+  ]
+}
