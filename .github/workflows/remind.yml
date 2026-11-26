@@ -1,0 +1,49 @@
+name: 课程提醒推送
+
+# GitHub Actions 的 cron 用 UTC，脚本内部按北京时间计算，所以这里不用换算。
+# 公开仓库的 Actions 免费；私有仓库有每月分钟数限制，建议用公开仓库（token 放在 Secrets 里，不会泄露）。
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:      # 方便手动点一次，验证推送是否打通
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装农历依赖
+        run: pip install lunardate
+
+      # 缓存已推送记录，避免同一次触发被重复推送
+      - name: 恢复去重状态
+        uses: actions/cache@v4
+        with:
+          path: state
+          key: remind-state-${{ github.run_id }}
+          restore-keys: |
+            remind-state-
+
+      - name: 检查并推送到微信
+        env:
+          PUSH_CHANNEL: pushplus          # 改用 Server酱时改成 serverchan
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
+          TZ: Asia/Shanghai
+        # ⚠️ GitHub 免费定时任务实际执行间隔经常是 30-90 分钟（官方排队机制，无法避免）。
+        # 所以窗口不能只回看几分钟，否则提醒会被整段漏掉。
+        # 窗口 120 分钟 + 脚本自带去重：漏掉的提醒下次检查时自动补推，且不会重复推送。
+        run: python push.py --once --window 120
+
+      - name: 手动触发时发一条测试消息
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          PUSH_CHANNEL: pushplus
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
+        run: python push.py --test
